@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+.container_1 {
+  display: flex;
+  flex-direction: row;
+  height: 120px;
+  background-color: white;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
+}
+.img_logo {
+  display: flex;
+  flex-direction: row;
+  width: auto;
+  height: 80%;
+  margin: auto 50px;
+  margin-right: 30px;
+}
+.img_logo img {
+  margin: auto;
+  height: 100%;
+  width: 100%;
+}
+.titulo {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: auto;
+  margin: auto 0;
+}
+.titulo h1 {
+  color: rgba(65, 183, 132, 1);
+  font-family: "Nunito", sans-serif;
+  margin: 0;
+}
+.titulo h3 {
+  color: rgba(65, 183, 132, 1);
+  font-family: "Nunito", sans-serif;
+  margin: 0;
+  margin-top: -5px;
+}
+
+@media (max-width: 880px) {
+  .container_1 {
+    height: 90px;
+  }
+  .titulo h3 {
+    font-size: 5mm;
+  }
+  .titulo h1 {
+    font-size: 8mm;
+  }
+  .img_logo {
+    height: 100%;
+    margin-right: 15px;
+  }
+}
+@media (max-width: 660px) {
+  .container_1 {
+    height: 85px;
+  }
+  .titulo h3 {
+    font-size: 4.5mm;
+  }
+  .titulo h1 {
+    font-size: 6mm;
+  }
+}
+@media (max-width: 500px) {
+  .titulo h3 {
+    font-size: 4.5mm;
+  }
+  .titulo h1 {
+    font-size: 6mm;
+  }
+  .img_logo {
+    margin-left: 20px;
+  }
+}

@@ -1,0 +1,15 @@
+.colunm {
+  display: flex;
+  flex-direction: column;
+}
+.row {
+  display: flex;
+  flex-direction: row;
+}
+html,
+body {
+  background-color: rgba(241, 240, 245, 1);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
