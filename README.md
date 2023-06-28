@@ -40,5 +40,4 @@ Para utilizar a calculadora de notas avaliativas universitárias, você pode ace
 
 Agradeço por visitar o repositório do GitHub da Calculadora de Notas Avaliativas Universitárias e espero que ela seja útil para você!
 
-Atenciosamente,
-[Seu Nome]
+
