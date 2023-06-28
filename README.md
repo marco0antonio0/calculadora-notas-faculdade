@@ -2,9 +2,9 @@
 
 <br>
 
-![img]([https://raw.githubusercontent.com/marco0antonio0/calculadora-notas-faculdade/master/readme_images/image_readme.png](https://raw.githubusercontent.com/marco0antonio0/calculadora-notas-faculdade/master/images_readme/r.png))
+![img](https://raw.githubusercontent.com/marco0antonio0/calculadora-notas-faculdade/master/images_readme/r.png)
 
-<br
+<br/>
 
 Bem-vindo ao repositório do GitHub da Calculadora de Notas Avaliativas Universitárias! Aqui você encontrará o código-fonte do meu projeto, desenvolvido em Next.js, que permite calcular a média final com base nas notas das avaliações AV1 e AV2, seguindo a lógica e critérios estabelecidos pela universidade.
 
