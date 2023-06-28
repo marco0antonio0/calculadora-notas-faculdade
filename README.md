@@ -1,14 +1,44 @@
-# Calculadora de Notas Avaliativas
-<span>A Calculadora de Notas Avaliativas é uma aplicação web desenvolvida utilizando Node.js e Next.js. Seu principal objetivo é ajudar os estudantes a calcular suas notas e saber se estão aprovados em uma disciplina, considerando as avaliações AV1 e AV2 <br><span>
+# Calculadora de Notas Avaliativas Universitárias
+
 <br>
-![img](https://raw.githubusercontent.com/marco0antonio0/calculadora-notas-faculdade/master/readme_images/image_readme.png) <br>
+
+![img]([https://raw.githubusercontent.com/marco0antonio0/calculadora-notas-faculdade/master/readme_images/image_readme.png](https://raw.githubusercontent.com/marco0antonio0/calculadora-notas-faculdade/master/images_readme/r.png))
+
+<br
+
+Bem-vindo ao repositório do GitHub da Calculadora de Notas Avaliativas Universitárias! Aqui você encontrará o código-fonte do meu projeto, desenvolvido em Next.js, que permite calcular a média final com base nas notas das avaliações AV1 e AV2, seguindo a lógica e critérios estabelecidos pela universidade.
+
+## Visão Geral
+
 <br>
-<span>Através da Calculadora de Notas Avaliativas, é possível inserir as notas das avaliações AV1 e AV2 e obter instantaneamente o resultado. A aplicação realizará os cálculos necessários e exibirá se o estudante foi aprovado ou se precisará fazer uma avaliação final para alcançar a aprovação.
 
-A interface simples e intuitiva torna a utilização da Calculadora de Notas Avaliativas fácil e acessível para todos. Basta inserir as notas nas respectivas áreas designadas e o resultado será exibido imediatamente na tela.
+![img](https://raw.githubusercontent.com/marco0antonio0/calculadora-notas-faculdade/master/readme_images/image_readme.png)
 
-A Calculadora de Notas Avaliativas foi desenvolvida utilizando as tecnologias Node.js e Next.js. O Node.js é uma plataforma que permite a execução de código JavaScript no lado do servidor, enquanto o Next.js é um framework que facilita a criação de aplicações web modernas e eficientes.
+<br>
 
-Para acessar a aplicação, você pode visitar o seguinte endereço: https://calculadora-notas.nova-work.cloud/
+A calculadora de notas avaliativas universitárias foi desenvolvida com o objetivo de auxiliar estudantes a determinar sua situação acadêmica com base nas notas obtidas nas avaliações. Utilizei o Next.js, um framework React de alto desempenho, para criar uma aplicação web responsiva e intuitiva.
 
-A Calculadora de Notas Avaliativas é uma ferramenta útil para estudantes que desejam acompanhar seu desempenho acadêmico e ter uma visão clara sobre suas notas em uma disciplina. Experimente agora mesmo e simplifique o cálculo das suas notas avaliativas! <br><span>
+## Tecnologias Utilizadas
+
+- **Next.js**: Escolhi o Next.js por sua facilidade de uso e pela possibilidade de renderização do lado do servidor (SSR), o que proporciona uma experiência mais rápida e eficiente para o usuário.
+- **React**: Utilizei o React para criar uma interface interativa e dinâmica, permitindo que os usuários insiram as notas e obtenham os resultados de forma instantânea.
+- **Figma**: O design da calculadora de notas avaliativas universitárias foi criado no Figma, garantindo uma aparência profissional e agradável.
+
+## Funcionalidades
+
+- Inserção de Notas: Os usuários podem inserir as notas obtidas nas avaliações AV1 e AV2.
+- Cálculo da Média Final: Com base nas notas inseridas, a calculadora realiza o cálculo da média final de acordo com a fórmula estabelecida pela universidade.
+- Verificação de Aprovação: Com o cálculo da média final, a calculadora determina se o estudante foi aprovado ou se será necessária uma avaliação final, de acordo com os critérios da instituição.
+
+## Como Contribuir
+
+Se você tiver sugestões de melhorias ou encontrar problemas no código, fique à vontade para abrir uma issue ou enviar um pull request. Sua contribuição é sempre bem-vinda!
+
+## Acesse a Calculadora de Notas Avaliativas Universitárias
+
+Para utilizar a calculadora de notas avaliativas universitárias, você pode acessar a [versão online](https://sua-calculadora-de-notas.com) do projeto. Sinta-se à vontade para utilizar a aplicação e fornecer feedback.
+
+Agradeço por visitar o repositório do GitHub da Calculadora de Notas Avaliativas Universitárias e espero que ela seja útil para você!
+
+Atenciosamente,
+[Seu Nome]
