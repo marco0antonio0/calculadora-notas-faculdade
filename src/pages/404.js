@@ -1,7 +1,7 @@
 import Head from "next/head";
-import Widget_appBar from "../../components/appbar/widget";
-import Widget_campo_texto from "../../components/inputTextNotas/widget";
-import Widget_not_found from "../../components/notfound/widget";
+import Widget_appBar from "@/components/appbar/widget";
+import Widget_campo_texto from "@/components/inputTextNotas/widget";
+import Widget_not_found from "@/components/notfound/widget";
 
 export default function Home() {
   return (
@@ -14,7 +14,7 @@ export default function Home() {
       </Head>
       <div className="colunm">
         <Widget_appBar />
-        <Widget_not_found/>
+        <Widget_not_found />
       </div>
     </>
   );

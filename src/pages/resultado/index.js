@@ -1,6 +1,6 @@
 import Head from "next/head";
-import Widget_appBar from "../../../components/appbar/widget";
-import Widget_campo_texto from "../../../components/ShowResultado/widget";
+import Widget_appBar from "@/components/appbar/widget";
+import Widget_campo_texto from "@/components/ShowResultado/widget";
 
 export default function Home() {
   return (

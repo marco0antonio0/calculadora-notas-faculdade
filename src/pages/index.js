@@ -1,6 +1,6 @@
 import Head from "next/head";
-import Widget_appBar from "../../components/appbar/widget";
-import Widget_campo_texto from "../../components/inputTextNotas/widget";
+import Widget_appBar from "@/components/appbar/widget";
+import Widget_campo_texto from "@/components/inputTextNotas/widget";
 
 export default function Home() {
   return (
