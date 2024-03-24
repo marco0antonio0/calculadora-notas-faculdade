@@ -36,7 +36,7 @@ Se você tiver sugestões de melhorias ou encontrar problemas no código, fique 
 
 ## Acesse a Calculadora de Notas Avaliativas Universitárias
 
-Para utilizar a calculadora de notas avaliativas universitárias, você pode acessar a [versão online](https://calculadora-notas.nova-work.cloud/) do projeto. Sinta-se à vontade para utilizar a aplicação e fornecer feedback.
+Para utilizar a calculadora de notas avaliativas universitárias, você pode acessar a [versão online]([https://calculadora-notas.nova-work.cloud/](https://calculadora-de-notas-unama.devs-app.tech/)) do projeto. Sinta-se à vontade para utilizar a aplicação e fornecer feedback.
 
 Agradeço por visitar o repositório do GitHub da Calculadora de Notas Avaliativas Universitárias e espero que ela seja útil para você!
 
