@@ -6,7 +6,9 @@ export default function Widget_appBar() {
   return (
     <>
       <div className={styles.container_1}>
-        <div className={styles.img_logo}>
+        <div className={styles.img_logo} onClick={() => {
+          r.push("/")
+        }}>
           <img src={"/images/logo.png"}></img>
         </div>
         <div className={styles.titulo}>
