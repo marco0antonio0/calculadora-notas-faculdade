@@ -14,8 +14,6 @@ export default function Home() {
       </Head>
       <div className="colunm">
         <Widget_appBar />
-        <Widget_campo_texto />
-        {/* <Widget_BTN /> */}
         <Widget_aviso />
       </div>
     </>

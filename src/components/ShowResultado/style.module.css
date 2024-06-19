@@ -8,6 +8,7 @@
   height: auto;
   min-height: 30px;
   margin: auto;
+
 }
 
 .tiulo h1 {
@@ -88,6 +89,7 @@
   .container_1 {
     width: 80%;
     margin: auto;
+    margin-left: 25px;
   }
 
   .tiulo {

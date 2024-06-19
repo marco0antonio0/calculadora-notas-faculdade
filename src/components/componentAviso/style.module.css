@@ -26,4 +26,8 @@
     .container_1 {
         max-width: 80%;
     }
+
+    .container_1 p {
+        text-align: justify;
+    }
 }

@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+
 .container_1 {
   display: flex;
   flex-direction: column;
@@ -6,16 +7,20 @@
   height: auto;
   min-height: 30px;
   margin: auto;
+  margin-top: 20px;
 }
+
 .tiulo h1 {
   font-weight: 400;
   font-family: "Nunito", sans-serif;
 }
+
 .campoTexto {
   display: flex;
   flex-direction: row;
   height: 70px;
 }
+
 .campoTexto input {
   max-lines: 1;
   font-size: 5mm;
@@ -24,6 +29,7 @@
   border: solid rgba(0, 0, 0, 0.226) 0.5mm;
   border-radius: 70px;
 }
+
 /* ============================================ */
 .btn_click {
   cursor: pointer;
@@ -38,6 +44,7 @@
   display: flex;
   flex-direction: row;
 }
+
 .effects_h2 {
   filter: brightness(100%);
   user-select: none;
@@ -47,35 +54,62 @@
   font-weight: 400;
   color: white;
 }
+
 .btn_click:hover .effects_h2 {
   filter: brightness(0%);
 }
+
+@media (max-width: 800px) {
+
+  .container_1 {
+    max-width: 500px;
+  }
+}
+
 /* ============================================ */
 @media (max-width: 760px) {
+  .container_1 {
+    margin-top: 10px;
+  }
+
   .effects_h2 {
     font-size: 5mm;
   }
+
   .btn_click {
     height: 65px;
   }
+
   .container_1 {
     width: 70%;
   }
+
   .tiulo {
     font-size: 3.5mm;
   }
+
   .campoTexto {
     font-size: 2.5mm;
-    height: 50px;
+    height: 70px;
   }
 }
+
+@media (max-width: 600px) {
+  .campoTexto {
+    font-size: 2.5mm;
+    height: 60px;
+  }
+}
+
 @media (max-width: 510px) {
   .effects_h2 {
     font-size: 4.5mm;
   }
+
   .container_1 {
     width: 80%;
   }
+
   .tiulo {
     font-size: 2.5mm;
   }
