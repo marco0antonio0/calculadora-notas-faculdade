@@ -15,7 +15,7 @@ export default function Widget_campo_texto() {
         {/* =================================================== */}
 
         <div className={styles.tiulo}>
-          {med <= 4 ? <h1>Resposta:</h1> : <h1>{med >= 7 ? 'Voce ja esta aprovado !!' : 'Avaliação Final necessaria !!'}</h1>}
+          {med <= 4 ? <h1>Resposta:</h1> : <h1>{med >= 7 ? 'Voce ja esta aprovado !!' : 'Avaliação Final necessária !!'}</h1>}
         </div>
         {med <= 4 ? <div className={styles.showContainer}>
           <p>
@@ -36,7 +36,7 @@ export default function Widget_campo_texto() {
           <div className={styles.showContainer}>
             {med < 7 ? (
               <p>
-                A av1= {av1} , av2= {av2}. <br /> Logo sera necessario obter a
+                A av1= {av1} , av2= {av2}. <br /> Logo sera necessário obter a
                 pontuação de {nf} pontos para ser
                 aprovado na avaliação final
                 <br />

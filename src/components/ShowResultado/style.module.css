@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+
 .container_1 {
   margin-top: 50px;
   display: flex;
@@ -8,10 +9,12 @@
   min-height: 30px;
   margin: auto;
 }
+
 .tiulo h1 {
   font-weight: 400;
   font-family: "Nunito", sans-serif;
 }
+
 .showContainer {
   padding: 15px;
   height: auto;
@@ -21,9 +24,11 @@
   border-radius: 25px;
   border: solid rgba(0, 0, 0, 0.25) 0.5mm;
 }
+
 .showContainer p {
   font-size: 5mm;
 }
+
 /* ============================================ */
 .btn_click {
   cursor: pointer;
@@ -38,6 +43,7 @@
   display: flex;
   flex-direction: row;
 }
+
 .effects_h2 {
   filter: brightness(100%);
   user-select: none;
@@ -47,33 +53,43 @@
   font-weight: 400;
   color: white;
 }
+
 .btn_click:hover .effects_h2 {
   filter: brightness(0%);
 }
+
 /* ============================================ */
 @media (max-width: 760px) {
   .effects_h2 {
     font-size: 5mm;
   }
+
   .btn_click {
     height: 65px;
   }
+
   .container_1 {
     margin-top: 20px;
     width: 70%;
-    margin-left: 20px;
+    /* margin-left: 20px; */
+    margin: auto;
   }
+
   .tiulo {
     font-size: 3.5mm;
   }
 }
+
 @media (max-width: 510px) {
   .effects_h2 {
     font-size: 4.5mm;
   }
+
   .container_1 {
     width: 80%;
+    margin: auto;
   }
+
   .tiulo {
     font-size: 2.5mm;
   }

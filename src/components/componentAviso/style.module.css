@@ -1,0 +1,29 @@
+.container_1 {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 30px;
+    max-width: 700px;
+}
+
+.container_1 h1 {
+    font-size: x-large;
+    font-weight: 500;
+}
+
+.container_1 p {
+    font-size: large;
+}
+
+@media (max-width: 760px) {
+    .container_1 {
+        max-width: 70%;
+    }
+}
+
+@media (max-width: 510px) {
+
+    .container_1 {
+        max-width: 80%;
+    }
+}
