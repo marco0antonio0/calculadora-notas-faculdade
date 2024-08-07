@@ -15,9 +15,9 @@ export default function Widget_campo_texto() {
         {/* =================================================== */}
 
         <div className={styles.tiulo}>
-          {med <= 4 ? <h1>Resposta:</h1> : <h1>{med >= 7 ? 'Voce ja esta aprovado !!' : 'Avaliação Final necessária !!'}</h1>}
+          {med < 4 ? <h1>Resposta:</h1> : <h1>{med >= 7 ? 'Voce ja esta aprovado !!' : 'Avaliação Final necessária !!'}</h1>}
         </div>
-        {med <= 4 ? <div className={styles.showContainer}>
+        {med < 4 ? <div className={styles.showContainer}>
           <p>
             Soma das av1 e av2 totalizaram {parseFloat(av1) + parseFloat(av2)} pts <br /><br />
             De acordo com 'blogs.unama.br' se a soma das notas das duas primeiras avaliações for inferior a 8, o aluno estará automaticamente REPROVADO<br />
