@@ -11,6 +11,9 @@ jobs:
 
     env:
       SSH_KEY_PATH: ./ec2_key.pem
+      DEPLOY_DIR: ${{ secrets.EC2_DEPLOY_DIR }}
+      EC2_USER: ${{ secrets.EC2_USER }}
+      EC2_HOST: ${{ secrets.EC2_HOST }}
 
     steps:
       - name: 📦 Clonar o repositório
@@ -22,14 +25,10 @@ jobs:
           chmod 600 "$SSH_KEY_PATH"
 
       - name: 🚀 Conectar na EC2 e executar o deploy
-        env:
-          EC2_USER: ${{ secrets.EC2_USER }}
-          EC2_HOST: ${{ secrets.EC2_HOST }}
-          DEPLOY_DIR: ${{ secrets.EC2_DEPLOY_DIR }}
         run: |
           echo "🔗 Conectando na EC2 em $EC2_HOST com o usuário $EC2_USER..."
 
-          ssh -i "$SSH_KEY_PATH" -o StrictHostKeyChecking=no "$EC2_USER@$EC2_HOST" << 'EOF'
+          ssh -i "$SSH_KEY_PATH" -o StrictHostKeyChecking=no "$EC2_USER@$EC2_HOST" << EOF
             set -e
 
             echo "📁 Entrando no diretório do projeto..."
