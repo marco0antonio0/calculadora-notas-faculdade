@@ -2,12 +2,13 @@ name: 🚀 Deploy Docker em EC2
 
 on:
   push:
-    branches: [ "master" ]  # Altere para sua branch principal se necessário
+    branches: [ "master" ]
 
 jobs:
   deploy:
     name: 🔄 Deploy automático via SSH
     runs-on: ubuntu-latest
+    environment: aws 
 
     env:
       SSH_KEY_PATH: ./ec2_key.pem
