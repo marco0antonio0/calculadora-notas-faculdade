@@ -49,6 +49,7 @@ jobs:
             docker-compose up -d --build
 
             echo "✅ Deploy finalizado com sucesso!"
+            exit 0
           EOF
 
       - name: 🧼 Limpar chave SSH temporária
