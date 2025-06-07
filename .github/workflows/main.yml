@@ -47,8 +47,6 @@ jobs:
             echo '🧱 Recriando containers com build...'
             docker-compose up -d --build >/dev/null 2>&1 &&
             echo '✅ Deploy finalizado com sucesso!' || echo '❌ Deploy falhou!'
-
-            echo '✅ Deploy finalizado com sucesso!'
           "
 
       - name: 🧼 Limpar chave SSH temporária
