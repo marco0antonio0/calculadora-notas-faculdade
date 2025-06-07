@@ -8,7 +8,7 @@ jobs:
   deploy:
     name: 🔄 Deploy automático via SSH
     runs-on: ubuntu-latest
-    environment: aws 
+    environment: aws
 
     env:
       SSH_KEY_PATH: ./ec2_key.pem
@@ -29,19 +29,23 @@ jobs:
         run: |
           echo "🔗 Conectando na EC2 em $EC2_HOST com o usuário $EC2_USER..."
 
-          ssh -i "$SSH_KEY_PATH" -o StrictHostKeyChecking=no "$EC2_USER@$EC2_HOST" << EOF
+          ssh -tt -i "$SSH_KEY_PATH" -o StrictHostKeyChecking=no "$EC2_USER@$EC2_HOST" << EOF
             set -e
 
             echo "📁 Entrando no diretório do projeto..."
             cd "$DEPLOY_DIR"
 
-            echo "🌀 Atualizando código..."
+            echo "🌀 Resetando alterações locais (git reset --hard)..."
+            git reset --hard HEAD
+            git clean -fd
+
+            echo "📥 Fazendo pull da branch master..."
             git pull origin master
 
             echo "🛑 Parando containers antigos..."
             docker-compose down
 
-            echo "🧱 Recriando containers..."
+            echo "🧱 Recriando containers com build..."
             docker-compose up -d --build
 
             echo "✅ Deploy finalizado com sucesso!"
