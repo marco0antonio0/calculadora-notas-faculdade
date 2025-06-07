@@ -1,0 +1,46 @@
+name: 🚀 Deploy Docker em EC2
+
+on:
+  push:
+    branches: [ "master" ]  # Altere para sua branch principal se necessário
+
+jobs:
+  deploy:
+    name: 🔄 Deploy automático via SSH
+    runs-on: ubuntu-latest
+
+    env:
+      DEPLOY_DIR: ${{ secrets.EC2_DEPLOY_DIR }}    # Ex: /home/ubuntu/meu-projeto
+      SSH_KEY_PATH: ./ec2_key.pem
+
+    steps:
+      - name: 📦 Clonar o repositório
+        uses: actions/checkout@v3
+
+      - name: 🔐 Criar chave SSH temporária
+        run: |
+          echo "${{ secrets.EC2_SSH_KEY }}" | base64 -d > $SSH_KEY_PATH
+          chmod 600 $SSH_KEY_PATH
+
+      - name: 🚀 Conectar na EC2 e executar comandos
+        run: |
+          ssh -i "$SSH_KEY_PATH" -o StrictHostKeyChecking=no ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} << 'EOF'
+            set -e  # Para o script falhar caso algum comando falhe
+
+            echo "📁 Entrando no diretório do projeto..."
+            cd "${DEPLOY_DIR}"
+
+            echo "🌀 Atualizando repositório..."
+            git pull origin main
+
+            echo "🛑 Derrubando containers antigos..."
+            docker-compose down
+
+            echo "🛠️ Recriando containers com build..."
+            docker-compose up -d --build
+
+            echo "✅ Deploy concluído com sucesso!"
+          EOF
+
+      - name: 🧼 Limpar chave SSH
+        run: rm -f $SSH_KEY_PATH
