@@ -29,28 +29,26 @@ jobs:
         run: |
           echo "🔗 Conectando na EC2 em $EC2_HOST com o usuário $EC2_USER..."
 
-          ssh -tt -i "$SSH_KEY_PATH" -o StrictHostKeyChecking=no "$EC2_USER@$EC2_HOST" << EOF
+          ssh -tt -i "$SSH_KEY_PATH" -o StrictHostKeyChecking=no "$EC2_USER@$EC2_HOST" "
             set -e
+            echo '📁 Entrando no diretório do projeto...'
+            cd '$DEPLOY_DIR'
 
-            echo "📁 Entrando no diretório do projeto..."
-            cd "$DEPLOY_DIR"
-
-            echo "🌀 Resetando alterações locais (git reset --hard)..."
+            echo '🌀 Resetando alterações locais (git reset --hard)...'
             git reset --hard HEAD
             git clean -fd
 
-            echo "📥 Fazendo pull da branch master..."
+            echo '📥 Fazendo pull da branch master...'
             git pull origin master
 
-            echo "🛑 Parando containers antigos..."
+            echo '🛑 Parando containers antigos...'
             docker-compose down
 
-            echo "🧱 Recriando containers com build..."
+            echo '🧱 Recriando containers com build...'
             docker-compose up -d --build
 
-            echo "✅ Deploy finalizado com sucesso!"
-            exit 0
-          EOF
+            echo '✅ Deploy finalizado com sucesso!'
+          "
 
       - name: 🧼 Limpar chave SSH temporária
         run: rm -f "$SSH_KEY_PATH"
