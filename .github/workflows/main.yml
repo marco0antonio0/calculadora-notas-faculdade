@@ -34,8 +34,8 @@ jobs:
           export TYPE_INITIAL="t2.micro"
           export TYPE_BUILD="t2.medium"
 
-          chmod +x script-repo/seu-script.sh
-          script-repo/seu-script.sh
+          chmod +x ec2-scale-build.sh
+          ec2-scale-build.sh
 
       - name: 🧼 Limpar chave SSH temporária
         if: always()
