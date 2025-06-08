@@ -13,8 +13,8 @@ jobs:
       - name: 📥 Clonar repositório com script
         uses: actions/checkout@v3
         with:
-          repository: marco0antonio0/guideActionDeploy/blob/main/ec2-scale-build.sh
-          path: script-repo
+          repository: marco0antonio0/guideActionDeploy
+          path: ec2-scale-build.sh
 
       - name: 🔐 Criar chave SSH temporária
         run: |
