@@ -8,6 +8,7 @@ jobs:
   deploy:
     name: 🔄 Escalonamento + Deploy via script externo
     runs-on: ubuntu-latest
+    environment: aws
 
     steps:
       - name: 📥 Clonar repositório com script
