@@ -1,4 +1,4 @@
-name: 🚀 EC2 Autoscaling + Deploy
+name: 🚀 EC2 Autoscaling + Deploys
 
 on:
   push:
