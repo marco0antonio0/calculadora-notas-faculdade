@@ -1,4 +1,4 @@
-name: 🚀 Deploy Docker em EC2
+name: 🚀 EC2 Autoscaling + Deploy
 
 on:
   push:
@@ -6,48 +6,37 @@ on:
 
 jobs:
   deploy:
-    name: 🔄 Deploy automático via SSH
+    name: 🔄 Escalonamento + Deploy via script externo
     runs-on: ubuntu-latest
-    environment: aws
-
-    env:
-      SSH_KEY_PATH: ./ec2_key.pem
-      DEPLOY_DIR: ${{ secrets.EC2_DEPLOY_DIR }}
-      EC2_USER: ${{ secrets.EC2_USER }}
-      EC2_HOST: ${{ secrets.EC2_HOST }}
 
     steps:
-      - name: 📦 Clonar o repositório
+      - name: 📥 Clonar repositório com script
         uses: actions/checkout@v3
+        with:
+          repository: marco0antonio0/guideActionDeploy/blob/main/ec2-scale-build.sh
+          path: script-repo
 
-      - name: 🔐 Criar chave SSH temporária a partir do secret base64
+      - name: 🔐 Criar chave SSH temporária
         run: |
-          echo "${{ secrets.EC2_SSH_KEY }}" | base64 -d > "$SSH_KEY_PATH"
-          chmod 600 "$SSH_KEY_PATH"
+          echo "${{ secrets.EC2_SSH_KEY }}" | base64 -d > /tmp/ec2_key.pem
+          chmod 600 /tmp/ec2_key.pem
 
-      - name: 🚀 Conectar na EC2 e executar o deploy
+      - name: 🔧 Executar script com variáveis de ambiente
         run: |
-          echo "🔗 Conectando na EC2 em $EC2_HOST com o usuário $EC2_USER..."
+          export AWS_ACCESS_KEY_ID="${{ secrets.AWS_ACCESS_KEY_ID }}"
+          export AWS_SECRET_ACCESS_KEY="${{ secrets.AWS_SECRET_ACCESS_KEY }}"
+          export AWS_DEFAULT_REGION="us-east-1"
 
-          ssh -tt -i "$SSH_KEY_PATH" -o StrictHostKeyChecking=no "$EC2_USER@$EC2_HOST" "
-            set -e
-            echo '📁 Entrando no diretório do projeto...'
-            cd '$DEPLOY_DIR'
+          export EC2_USER="${{ secrets.EC2_USER }}"
+          export EC2_HOST="${{ secrets.EC2_HOST }}"
+          export SSH_KEY_B64_PATH="/tmp/ec2_key.pem"
+          export INSTANCE_ID="${{ secrets.EC2_INSTANCE_ID }}"
+          export TYPE_INITIAL="t2.micro"
+          export TYPE_BUILD="t2.medium"
 
-            echo '🌀 Resetando alterações locais (git reset --hard)...'
-            git reset --hard HEAD
-            git clean -fd
-
-            echo '📥 Fazendo pull da branch master...'
-            git pull origin master
-
-            echo '🛑 Parando containers antigos...'
-            docker-compose down
-
-            echo '🧱 Recriando containers com build...'
-            docker-compose up -d --build >/dev/null 2>&1 &&
-            echo '✅ Deploy finalizado com sucesso!' || echo '❌ Deploy falhou!'
-          "
+          chmod +x script-repo/seu-script.sh
+          script-repo/seu-script.sh
 
       - name: 🧼 Limpar chave SSH temporária
-        run: rm -f "$SSH_KEY_PATH"
+        if: always()
+        run: rm -f /tmp/ec2_key.pem
