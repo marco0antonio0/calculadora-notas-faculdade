@@ -1,4 +1,4 @@
-name: 🚀 EC2 Autoscaling + Deploys
+name: 🚀 EC2 Autoscaling + Deploy
 
 on:
   push:
@@ -6,12 +6,12 @@ on:
 
 jobs:
   deploy:
-    name: 🚀 Deploys + Autoscaling
+    name: 🚀 Deploy + Autoscaling EC2
     runs-on: ubuntu-latest
     environment: aws
 
     steps:
-      - name: 📥 Clonar repositório com script
+      - name: 📥 Clonar repositório com scripts de deploy
         uses: actions/checkout@v3
         with:
           repository: marco0antonio0/guideActionDeploy
@@ -21,24 +21,48 @@ jobs:
         run: |
           echo "${{ secrets.EC2_SSH_KEY }}" | base64 -d > /tmp/ec2_key.pem
           chmod 600 /tmp/ec2_key.pem
+        shell: bash
 
-      - name: 🔧 Executar script com variáveis de ambiente
+      - name: ⚙️ 🔼 Etapa 1 Auto Scaling para instância mais forte
         run: |
           export AWS_ACCESS_KEY_ID="${{ secrets.AWS_ACCESS_KEY_ID }}"
           export AWS_SECRET_ACCESS_KEY="${{ secrets.AWS_SECRET_ACCESS_KEY }}"
           export AWS_DEFAULT_REGION="us-east-1"
+          export TYPE_BUILD="${{ secrets.TYPE_BUILD }}"
+          export INSTANCE_ID="${{ secrets.EC2_INSTANCE_ID }}"
+          chmod +x script-repo/build_v2/ec2-scale-build-scaling-start.sh
+          script-repo/build_v2/ec2-scale-build-scaling-start.sh
+          
+        shell: bash
+
+      - name: ⚙️ 🚀 Etapa 2 Deploy da aplicação na instância EC2
+        if: success()  
+        run: |
+          export REPO_URL="${{ secrets.REPO_URL }}"
           export EC2_USER="${{ secrets.EC2_USER }}"
           export EC2_HOST="${{ secrets.EC2_HOST }}"
           export SSH_KEY_B64_PATH="/tmp/ec2_key.pem"
-          export INSTANCE_ID="${{ secrets.EC2_INSTANCE_ID }}"
-          export TYPE_INITIAL="${{ secrets.TYPE_INITIAL }}"
-          export TYPE_BUILD="${{ secrets.TYPE_BUILD }}"
           export DEPLOY_DIR="${{ secrets.EC2_DEPLOY_DIR }}"
-          chmod +x script-repo/ec2-scale-build.sh
-          script-repo/ec2-scale-build.sh
+          chmod +x script-repo/build_v2/ec2-scale-build.sh
+          script-repo/build_v2/ec2-scale-build.sh
+        shell: bash
+
+      - name: ⚙️ 🔽 Etapa 3 Reverter para instância padrão (autoscaling reverso)
+        if: always()
+        run: |
+          echo "♻️ Executando reversão para tipo inicial da instância EC2..."
+          export AWS_ACCESS_KEY_ID="${{ secrets.AWS_ACCESS_KEY_ID }}"
+          export AWS_SECRET_ACCESS_KEY="${{ secrets.AWS_SECRET_ACCESS_KEY }}"
+          export AWS_DEFAULT_REGION="us-east-1"
+          export TYPE_INITIAL="${{ secrets.TYPE_INITIAL }}"
+          export INSTANCE_ID="${{ secrets.EC2_INSTANCE_ID }}"
+          chmod +x script-repo/build_v2/ec2-scale-build-scaling-end.sh
+          script-repo/build_v2/ec2-scale-build-scaling-end.sh
+        shell: bash
 
       - name: 🧼 Limpar chave SSH temporária
         if: always()
         run: |
           rm -f /tmp/ec2_key.pem
           echo "🧽 Chave SSH temporária removida com sucesso."
+        shell: bash
