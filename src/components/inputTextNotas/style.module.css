@@ -1,116 +1,182 @@
-@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap");
 
 .container_1 {
   display: flex;
   flex-direction: column;
-  width: 700px;
+  width: 100%;
+  max-width: 840px;
   height: auto;
   min-height: 30px;
-  margin: auto;
-  margin-top: 20px;
-  margin-bottom: 70px;
+  margin: 40px auto;
+  padding: 50px;
+  background: #ffffff;
+  border-radius: 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e5e7eb;
 }
 
 .tiulo h1 {
-  font-weight: 400;
+  font-weight: 600;
   font-family: "Nunito", sans-serif;
+  color: #1f2937;
+  font-size: 1.5rem;
+  margin: 0;
+  margin-bottom: 12px;
 }
 
 .campoTexto {
   display: flex;
   flex-direction: row;
   height: 70px;
+  margin-bottom: 24px;
 }
 
 .campoTexto input {
   max-lines: 1;
-  font-size: 5mm;
+  font-size: 1.2rem;
   padding-left: 30px;
   width: 100%;
-  border: solid rgba(0, 0, 0, 0.226) 0.5mm;
-  border-radius: 70px;
+  border: 2px solid #e5e7eb;
+  border-radius: 16px;
+  transition: all 0.3s ease;
+  background: white;
+  font-family: "Nunito", sans-serif;
+  color: #1f2937;
+}
+
+.campoTexto input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  transform: translateY(-2px);
+}
+
+.campoTexto input:hover {
+  border-color: #9ca3af;
 }
 
 /* ============================================ */
 .btn_click {
   cursor: pointer;
   font-family: "Nunito", sans-serif;
-  height: 80px;
-  width: auto;
-  margin: auto;
-  padding: 0 15px;
-  margin-left: 0;
+  height: 65px;
+  width: 100%;
   margin-top: 30px;
-  background-color: rgba(65, 183, 132, 1);
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   display: flex;
   flex-direction: row;
+  border-radius: 16px;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+  border: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn_click::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s ease;
+}
+
+.btn_click:hover::before {
+  left: 100%;
+}
+
+.btn_click:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(102, 126, 234, 0.5);
+}
+
+.btn_click:active {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
 }
 
 .effects_h2 {
-  filter: brightness(100%);
   user-select: none;
   margin: auto;
-  font-size: 6mm;
+  font-size: 1.3rem;
   font-family: "Nunito", sans-serif;
-  font-weight: 400;
+  font-weight: 700;
   color: white;
-}
-
-.btn_click:hover .effects_h2 {
-  filter: brightness(0%);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  z-index: 1;
 }
 
 @media (max-width: 800px) {
-
   .container_1 {
+    width: 90%;
     max-width: 500px;
+    padding: 30px;
+    margin: 30px auto;
   }
 }
 
 /* ============================================ */
 @media (max-width: 760px) {
-
-
   .effects_h2 {
-    font-size: 5mm;
+    font-size: 1.1rem;
   }
 
   .btn_click {
-    height: 65px;
+    height: 60px;
   }
 
   .container_1 {
-    margin-top: 25px;
-    width: 70%;
+    width: 92%;
+    padding: 25px;
+    margin: 25px auto;
   }
 
-  .tiulo {
-    font-size: 3.5mm;
+  .tiulo h1 {
+    font-size: 1.3rem;
   }
 
   .campoTexto {
-    font-size: 2.5mm;
-    height: 70px;
+    height: 65px;
+    margin-bottom: 20px;
+  }
+  
+  .campoTexto input {
+    font-size: 1.1rem;
   }
 }
 
 @media (max-width: 600px) {
   .campoTexto {
-    font-size: 2.5mm;
     height: 60px;
+  }
+  
+  .container_1 {
+    width: 95%;
   }
 }
 
 @media (max-width: 510px) {
   .effects_h2 {
-    font-size: 4.5mm;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
   }
 
   .container_1 {
-    width: 80%;
+    width: 95%;
+    padding: 20px;
+    margin: 20px auto;
   }
 
-  .tiulo {
-    font-size: 2.5mm;
+  .tiulo h1 {
+    font-size: 1.2rem;
+  }
+  
+  .campoTexto input {
+    font-size: 1rem;
+    padding-left: 20px;
   }
 }

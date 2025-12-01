@@ -1,33 +1,278 @@
-.container_1 {
-    display: flex;
-    flex-direction: column;
-    margin: auto;
-    margin-top: 30px;
-    max-width: 700px;
+.container {
+  width: 100%;
+  min-height: 100vh;
+  padding-bottom: 60px;
 }
 
-.container_1 h1 {
-    font-size: x-large;
-    font-weight: 500;
+/* Hero Section */
+.hero {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+  margin-bottom: 60px;
 }
 
-.container_1 p {
-    font-size: large;
+.heroContent {
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-@media (max-width: 760px) {
-    .container_1 {
-        max-width: 70%;
-    }
+.heroTitle {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
-@media (max-width: 510px) {
+.heroSubtitle {
+  font-size: 1.3rem;
+  font-weight: 400;
+  opacity: 0.95;
+  line-height: 1.6;
+}
 
-    .container_1 {
-        max-width: 80%;
-    }
+/* Sections */
+.section {
+  max-width: 900px;
+  margin: 0 auto 40px auto;
+  padding: 0 20px;
+}
 
-    .container_1 p {
-        text-align: justify;
-    }
+.sectionTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* Cards */
+.card {
+  background: white;
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.warningCard {
+  border-left: 5px solid #f59e0b;
+  background: linear-gradient(to right, #fffbeb 0%, white 10%);
+}
+
+/* Icon Header */
+.iconHeader {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.icon {
+  font-size: 2.5rem;
+  line-height: 1;
+}
+
+.iconHeader h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0;
+}
+
+/* Text */
+.text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #4b5563;
+  margin-bottom: 15px;
+}
+
+.text:last-child {
+  margin-bottom: 0;
+}
+
+.text strong {
+  color: #1f2937;
+  font-weight: 600;
+}
+
+/* GitHub Button */
+.githubButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 12px 30px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.githubButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(102, 126, 234, 0.4);
+}
+
+/* Warning Content */
+.warningContent {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.warningBox {
+  background: #fef3c7;
+  border-left: 4px solid #f59e0b;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 10px 0;
+}
+
+.warningBox p {
+  margin: 0;
+  color: #92400e;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Features Grid */
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.feature {
+  background: white;
+  border-radius: 12px;
+  padding: 30px 20px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+}
+
+.feature:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+}
+
+.featureIcon {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.feature h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0 0 10px 0;
+}
+
+.feature p {
+  font-size: 0.95rem;
+  color: #6b7280;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: 2.2rem;
+  }
+
+  .heroSubtitle {
+    font-size: 1.1rem;
+  }
+
+  .hero {
+    padding: 60px 20px;
+  }
+
+  .card {
+    padding: 30px 25px;
+  }
+
+  .iconHeader h2 {
+    font-size: 1.5rem;
+  }
+
+  .icon {
+    font-size: 2rem;
+  }
+
+  .text {
+    font-size: 1rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.7rem;
+  }
+
+  .featuresGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroTitle {
+    font-size: 1.8rem;
+  }
+
+  .heroSubtitle {
+    font-size: 1rem;
+  }
+
+  .hero {
+    padding: 50px 15px;
+    margin-bottom: 40px;
+  }
+
+  .card {
+    padding: 25px 20px;
+  }
+
+  .iconHeader {
+    gap: 10px;
+  }
+
+  .iconHeader h2 {
+    font-size: 1.3rem;
+  }
+
+  .icon {
+    font-size: 1.8rem;
+  }
+
+  .githubButton {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+
+  .warningBox {
+    padding: 15px;
+  }
+
+  .feature {
+    padding: 25px 15px;
+  }
+
+  .featureIcon {
+    font-size: 2.5rem;
+  }
 }

@@ -1,0 +1,163 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap");
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 30px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.header h2 {
+  font-family: "Nunito", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0 0 15px 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.header p {
+  font-family: "Nunito", sans-serif;
+  font-size: 1.1rem;
+  color: #6b7280;
+  margin: 0;
+  font-weight: 600;
+}
+
+.projectsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.projectCard {
+  background: #ffffff;
+  border: 2px solid #e5e7eb;
+  border-radius: 20px;
+  padding: 35px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.projectCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(102, 126, 234, 0.2);
+  border-color: #667eea;
+}
+
+.projectIcon {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.projectCard h3 {
+  font-family: "Nunito", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0;
+}
+
+.projectCard p {
+  font-family: "Nunito", sans-serif;
+  font-size: 1rem;
+  color: #6b7280;
+  margin: 0;
+  line-height: 1.6;
+  flex-grow: 1;
+}
+
+.viewProject {
+  font-family: "Nunito", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #667eea;
+  margin-top: 10px;
+  transition: transform 0.2s ease;
+  display: inline-block;
+}
+
+.projectCard:hover .viewProject {
+  transform: translateX(5px);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .container {
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+
+  .header {
+    margin-bottom: 35px;
+  }
+
+  .header h2 {
+    font-size: 2rem;
+  }
+
+  .header p {
+    font-size: 1rem;
+  }
+
+  .projectsGrid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .projectCard {
+    padding: 28px;
+  }
+
+  .projectIcon {
+    font-size: 2.5rem;
+  }
+
+  .projectCard h3 {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    margin: 30px auto;
+    padding: 0 15px;
+  }
+
+  .header h2 {
+    font-size: 1.7rem;
+  }
+
+  .header p {
+    font-size: 0.95rem;
+  }
+
+  .projectCard {
+    padding: 25px;
+  }
+
+  .projectIcon {
+    font-size: 2.2rem;
+  }
+
+  .projectCard h3 {
+    font-size: 1.2rem;
+  }
+
+  .projectCard p {
+    font-size: 0.95rem;
+  }
+}

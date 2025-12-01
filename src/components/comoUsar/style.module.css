@@ -1,0 +1,288 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap");
+
+.container {
+  width: 100%;
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 0 30px;
+}
+
+.content {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 50px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e5e7eb;
+}
+
+.content h2 {
+  font-family: "Nunito", sans-serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0 0 40px 0;
+  text-align: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.step {
+  display: flex;
+  gap: 25px;
+  align-items: flex-start;
+}
+
+.stepNumber {
+  min-width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Nunito", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: white;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.stepContent h3 {
+  font-family: "Nunito", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0 0 8px 0;
+}
+
+.stepContent p {
+  font-family: "Nunito", sans-serif;
+  font-size: 1rem;
+  color: #6b7280;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.infoBox {
+  display: flex;
+  gap: 20px;
+  background: linear-gradient(135deg, #f0f4ff 0%, #e9d5ff 100%);
+  border: 2px solid #c7d2fe;
+  border-radius: 16px;
+  padding: 25px;
+  margin-top: 30px;
+}
+
+.infoIcon {
+  font-size: 2.5rem;
+  flex-shrink: 0;
+}
+
+.infoText h4 {
+  font-family: "Nunito", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0 0 10px 0;
+}
+
+.infoText p {
+  font-family: "Nunito", sans-serif;
+  font-size: 1rem;
+  color: #4b5563;
+  margin: 0;
+  line-height: 1.7;
+}
+
+.warningBox {
+  display: flex;
+  gap: 20px;
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  border: 2px solid #fbbf24;
+  border-radius: 16px;
+  padding: 25px;
+  margin-top: 25px;
+}
+
+.warningIcon {
+  font-size: 2.5rem;
+  flex-shrink: 0;
+}
+
+.warningText h4 {
+  font-family: "Nunito", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #92400e;
+  margin: 0 0 10px 0;
+}
+
+.warningText p {
+  font-family: "Nunito", sans-serif;
+  font-size: 0.95rem;
+  color: #78350f;
+  margin: 0;
+  line-height: 1.7;
+}
+
+.warningText p strong {
+  font-weight: 700;
+  color: #92400e;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .container {
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+
+  .content {
+    padding: 35px;
+  }
+
+  .content h2 {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+
+  .steps {
+    gap: 25px;
+  }
+
+  .step {
+    gap: 20px;
+  }
+
+  .stepNumber {
+    min-width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+  }
+
+  .stepContent h3 {
+    font-size: 1.2rem;
+  }
+
+  .stepContent p {
+    font-size: 0.95rem;
+  }
+
+  .infoBox {
+    gap: 15px;
+    padding: 20px;
+  }
+
+  .infoIcon {
+    font-size: 2rem;
+  }
+
+  .infoText h4 {
+    font-size: 1.1rem;
+  }
+
+  .infoText p {
+    font-size: 0.95rem;
+  }
+
+  .warningBox {
+    gap: 15px;
+    padding: 20px;
+  }
+
+  .warningIcon {
+    font-size: 2rem;
+  }
+
+  .warningText h4 {
+    font-size: 1.1rem;
+  }
+
+  .warningText p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    margin: 30px auto;
+    padding: 0 15px;
+  }
+
+  .content {
+    padding: 25px;
+  }
+
+  .content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+  }
+
+  .step {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .stepNumber {
+    min-width: 55px;
+    height: 55px;
+    font-size: 1.6rem;
+  }
+
+  .stepContent h3 {
+    font-size: 1.1rem;
+  }
+
+  .stepContent p {
+    font-size: 0.9rem;
+  }
+
+  .infoBox {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .infoIcon {
+    font-size: 2.5rem;
+  }
+
+  .infoText h4 {
+    font-size: 1rem;
+  }
+
+  .infoText p {
+    font-size: 0.9rem;
+  }
+
+  .warningBox {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .warningIcon {
+    font-size: 2.5rem;
+  }
+
+  .warningText h4 {
+    font-size: 1rem;
+  }
+
+  .warningText p {
+    font-size: 0.85rem;
+  }
+}

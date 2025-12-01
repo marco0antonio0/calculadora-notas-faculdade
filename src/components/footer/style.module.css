@@ -1,0 +1,185 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap");
+
+.footer {
+  background: #1f2937;
+  color: white;
+  margin-top: auto;
+  width: 100%;
+  font-family: "Nunito", sans-serif;
+}
+
+.footerContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 50px 40px 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+}
+
+.footerSection {
+  display: flex;
+  flex-direction: column;
+}
+
+.footerTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 15px 0;
+  color: white;
+}
+
+.footerDescription {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+}
+
+.sectionTitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0 0 15px 0;
+  color: white;
+}
+
+.footerLinks {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footerLinks li {
+  margin-bottom: 10px;
+}
+
+.footerLink {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.footerLink:hover {
+  color: white;
+  transform: translateX(5px);
+}
+
+.socialLinks {
+  display: flex;
+  gap: 15px;
+}
+
+.socialLink {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+}
+
+.socialLink:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.footerBottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 25px 40px;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.copyright {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0 0 8px 0;
+}
+
+.credits {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .footerContent {
+    padding: 40px 25px 25px;
+    gap: 30px;
+    grid-template-columns: 1fr;
+  }
+
+  .footerTitle {
+    font-size: 1.3rem;
+  }
+
+  .footerDescription {
+    font-size: 0.95rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.1rem;
+  }
+
+  .footerBottom {
+    padding: 20px 25px;
+  }
+
+  .copyright,
+  .credits {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footerContent {
+    padding: 30px 20px 20px;
+    gap: 25px;
+  }
+
+  .footerTitle {
+    font-size: 1.2rem;
+  }
+
+  .footerDescription {
+    font-size: 0.9rem;
+  }
+
+  .sectionTitle {
+    font-size: 1rem;
+  }
+
+  .footerLink {
+    font-size: 0.95rem;
+  }
+
+  .socialLink {
+    width: 40px;
+    height: 40px;
+  }
+
+  .socialLink svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .footerBottom {
+    padding: 18px 20px;
+  }
+
+  .copyright,
+  .credits {
+    font-size: 0.8rem;
+  }
+}

@@ -1,24 +1,43 @@
-import Image from "next/image";
 import styles from "./style.module.css";
-import { Router, useRouter } from "next/router";
+import { useRouter } from "next/router";
+
 export default function Widget_appBar() {
-  const r = useRouter()
+  const router = useRouter();
+  
   return (
-    <>
-      <div className={styles.container_1}>
-        <div className={styles.img_logo} onClick={() => {
-          r.push("/")
-        }}>
-          <img src={"/images/logo.png"}></img>
+    <header className={styles.navbar}>
+      <div className={styles.container}>
+        <div className={styles.logo} onClick={() => router.push("/")}>
+          <img src="/images/logo.png" alt="Logo" />
+          <div className={styles.brandText}>
+            <h1>Calculadora de Notas</h1>
+            <span>Ciência da Computação</span>
+          </div>
         </div>
-        <div className={styles.titulo}>
-          <h1>Calculo de nota </h1>
-          <h3>Ciencia da computação</h3>
-        </div>
-        <div className={styles.img_logo_v2} onClick={() => { r.push("https://github.com/marco0antonio0/calculadora-notas-faculdade") }}>
-          <img src={"/images/icon_github.png"}></img>
-        </div>
+        
+        <nav className={styles.nav}>
+          <a 
+            onClick={() => router.push("/")} 
+            className={router.pathname === "/" ? styles.active : ""}
+          >
+            Início
+          </a>
+          <a 
+            onClick={() => router.push("/sobre")} 
+            className={router.pathname === "/sobre" ? styles.active : ""}
+          >
+            Sobre
+          </a>
+          <a
+            href="https://github.com/marco0antonio0/calculadora-notas-faculdade"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.githubLink}
+          >
+            <img src="/images/icon_github.png" alt="GitHub" />
+          </a>
+        </nav>
       </div>
-    </>
+    </header>
   );
 }

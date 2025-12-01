@@ -1,6 +1,9 @@
 import Head from "next/head";
 import Widget_appBar from "@/components/appbar/widget";
 import Widget_campo_texto from "@/components/inputTextNotas/widget";
+import Widget_ComoUsar from "@/components/comoUsar/widget";
+import Widget_Projetos from "@/components/projetos/widget";
+import Footer from "@/components/footer/widget";
 
 export default function Home() {
   return (
@@ -14,7 +17,9 @@ export default function Home() {
       <div className="colunm">
         <Widget_appBar />
         <Widget_campo_texto />
-        {/* <Widget_BTN /> */}
+        <Widget_ComoUsar />
+        <Widget_Projetos />
+        <Footer />
       </div>
     </>
   );
