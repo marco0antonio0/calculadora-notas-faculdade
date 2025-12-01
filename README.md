@@ -1,43 +1,134 @@
-# Calculadora de Notas Avaliativas Universitárias
+<div align="center">
 
-<br>
+# 📚 Calculadora de Notas Acadêmicas
 
-![img](https://raw.githubusercontent.com/marco0antonio0/calculadora-notas-faculdade/master/images_readme/r.png)
+### Ferramenta auxiliar para cálculo de médias universitárias
 
-<br/>
+[![Next.js](https://img.shields.io/badge/Next.js-13.0-black?style=for-the-badge&logo=next.js)](https://nextjs.org/) [![React](https://img.shields.io/badge/React-18.0-blue?style=for-the-badge&logo=react)](https://reactjs.org/) [![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
 
-Bem-vindo ao repositório do GitHub da Calculadora de Notas Avaliativas Universitárias! Aqui você encontrará o código-fonte do meu projeto, desenvolvido em Next.js, que permite calcular a média final com base nas notas das avaliações AV1 e AV2, seguindo a lógica e critérios estabelecidos pela universidade.
+[🌐 Site Online](https://calculadora-nota-academica.nextlab.cloud/) • [📖 Sobre](https://calculadora-nota-academica.nextlab.cloud/sobre) • [🐛 Reportar Bug](https://github.com/marco0antonio0/calculadora-notas-faculdade/issues)
 
-## Visão Geral
+![Preview](https://raw.githubusercontent.com/marco0antonio0/calculadora-notas-faculdade/master/images_readme/r.png)
 
-<br>
+</div>
 
-![img](https://raw.githubusercontent.com/marco0antonio0/calculadora-notas-faculdade/master/readme_images/image_readme.png)
+---
 
-<br>
+## 📋 Sobre o Projeto
 
-A calculadora de notas avaliativas universitárias foi desenvolvida com o objetivo de auxiliar estudantes a determinar sua situação acadêmica com base nas notas obtidas nas avaliações. Utilizei o Next.js, um framework React de alto desempenho, para criar uma aplicação web responsiva e intuitiva.
+A **Calculadora de Notas Acadêmicas** é uma aplicação web desenvolvida para auxiliar estudantes universitários no cálculo de suas médias finais. O sistema permite inserir as notas das avaliações AV1 e AV2, calculando automaticamente a média final e indicando a situação acadêmica do aluno (aprovado, reprovado ou necessidade de avaliação final).
 
-## Tecnologias Utilizadas
+Este é um projeto **não oficial**, desenvolvido como iniciativa acadêmica por alunos de Ciência da Computação da **UNAMA Parque Shopping**.
 
-- **Next.js**: Escolhi o Next.js por sua facilidade de uso e pela possibilidade de renderização do lado do servidor (SSR), o que proporciona uma experiência mais rápida e eficiente para o usuário.
-- **React**: Utilizei o React para criar uma interface interativa e dinâmica, permitindo que os usuários insiram as notas e obtenham os resultados de forma instantânea.
-- **Figma**: O design da calculadora de notas avaliativas universitárias foi criado no Figma, garantindo uma aparência profissional e agradável.
+### ✨ Características
 
-## Funcionalidades
+- 🚀 **Cálculo Instantâneo** - Resultados em tempo real
+- 📱 **Design Responsivo** - Funciona em qualquer dispositivo
+- 🎯 **Interface Intuitiva** - Fácil de usar e navegar
+- 🔓 **Código Aberto** - Disponível para a comunidade
+- 📊 **Visualização Clara** - Resultado detalhado com orientações
 
-- Inserção de Notas: Os usuários podem inserir as notas obtidas nas avaliações AV1 e AV2.
-- Cálculo da Média Final: Com base nas notas inseridas, a calculadora realiza o cálculo da média final de acordo com a fórmula estabelecida pela universidade.
-- Verificação de Aprovação: Com o cálculo da média final, a calculadora determina se o estudante foi aprovado ou se será necessária uma avaliação final, de acordo com os critérios da instituição.
+## 🖼️ Demonstração
 
-## Como Contribuir
+<div align="center">
 
-Se você tiver sugestões de melhorias ou encontrar problemas no código, fique à vontade para abrir uma issue ou enviar um pull request. Sua contribuição é sempre bem-vinda!
+![Screenshot](https://raw.githubusercontent.com/marco0antonio0/calculadora-notas-faculdade/master/readme_images/image_readme.png)
 
-## Acesse a Calculadora de Notas Avaliativas Universitárias
+</div>
 
-Para utilizar a calculadora de notas avaliativas universitárias, você pode acessar a [versão online]([https://calculadora-de-notas-unama.devs-app.tech/]) do projeto. Sinta-se à vontade para utilizar a aplicação e fornecer feedback.
+## 🛠️ Tecnologias
 
-Agradeço por visitar o repositório do GitHub da Calculadora de Notas Avaliativas Universitárias e espero que ela seja útil para você!
+Este projeto foi desenvolvido com as seguintes tecnologias:
+
+- **[Next.js](https://nextjs.org/)** - Framework React para renderização SSR e SSG
+- **[React](https://reactjs.org/)** - Biblioteca JavaScript para interfaces interativas
+- **[CSS Modules](https://github.com/css-modules/css-modules)** - Estilização com escopo local
+- **[Figma](https://www.figma.com/)** - Design e prototipação da interface
+
+## 🚀 Como Usar
+
+### Pré-requisitos
+
+Antes de começar, você precisa ter instalado:
+- [Node.js](https://nodejs.org/) (versão 16 ou superior)
+- [Git](https://git-scm.com/)
+
+### Instalação
+
+```bash
+# Clone este repositório
+git clone https://github.com/marco0antonio0/calculadora-notas-faculdade.git
+
+# Acesse a pasta do projeto
+cd calculadora-notas-faculdade
+
+# Instale as dependências
+npm install
+# ou
+yarn install
+# ou
+bun install
+
+# Execute em modo de desenvolvimento
+npm run dev
+# ou
+yarn dev
+# ou
+bun dev
+```
+
+Abra [http://localhost:3000](http://localhost:3000) no seu navegador para ver o resultado.
+
+## 📖 Como Funciona
+
+1. **Insira as Notas**: Digite as notas obtidas nas avaliações AV1 e AV2
+2. **Calcule**: Clique no botão para processar os dados
+3. **Visualize o Resultado**: O sistema mostra sua média final e situação acadêmica
+4. **Planeje seus Estudos**: Veja quanto precisa tirar na próxima avaliação (se necessário)
+
+## 🤝 Como Contribuir
+
+Contribuições são sempre bem-vindas! Se você quer contribuir com o projeto:
+
+1. Faça um Fork do projeto
+2. Crie uma Branch para sua Feature (`git checkout -b feature/NovaFuncionalidade`)
+3. Commit suas mudanças (`git commit -m 'Adiciona nova funcionalidade'`)
+4. Push para a Branch (`git push origin feature/NovaFuncionalidade`)
+5. Abra um Pull Request
+
+### 📝 Sugestões e Bugs
+
+Se você encontrou um bug ou tem alguma sugestão:
+- Abra uma [issue](https://github.com/marco0antonio0/calculadora-notas-faculdade/issues)
+- Descreva o problema ou sugestão detalhadamente
+- Se possível, inclua screenshots
+
+## ⚠️ Aviso Legal
+
+Esta é uma **ferramenta auxiliar** que utiliza informações de fontes públicas. 
+
+- **Não nos responsabilizamos** por eventuais desatualizações ou interpretações incorretas
+- Recomendamos **sempre consultar as fontes oficiais** da sua instituição
+- Os critérios de avaliação podem variar entre universidades e cursos
+
+## 📄 Licença
+
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+
+## 👥 Autores
+
+Desenvolvido com 💜 por estudantes de Ciência da Computação - UNAMA Parque Shopping
+
+---
+
+<div align="center">
+
+### 🌟 Se este projeto foi útil para você, considere dar uma estrela!
+
+[![GitHub stars](https://img.shields.io/github/stars/marco0antonio0/calculadora-notas-faculdade?style=social)](https://github.com/marco0antonio0/calculadora-notas-faculdade/stargazers)
+
+**[⬆ Voltar ao topo](#-calculadora-de-notas-acadêmicas)**
+
+</div>
 
 
