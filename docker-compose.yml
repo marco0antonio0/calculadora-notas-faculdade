@@ -2,13 +2,8 @@ services:
   calculadora:
     build: .
     container_name: calculadora_academica
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.calculadora.rule=Host(`calculadora-academica.dirrocha.com`)"
-      - "traefik.http.routers.calculadora.entrypoints=websecure"
-      - "traefik.http.routers.calculadora.tls=true"
-      - "traefik.http.routers.calculadora.tls.certresolver=letsEncrypt"
-      - "traefik.http.services.calculadora.loadbalancer.server.port=3000"
+    ports:
+      - "5534:3000"
     networks:
       - proxy
     restart: always
@@ -16,5 +11,5 @@ services:
 networks:
   proxy:
     external: true
-    name: traefik_proxy
+    name: nginx_proxy
     
